@@ -2,7 +2,7 @@ const table = document.querySelector("#userTable");
 
 function getUserList() {
     // document.querySelector("#userTable");
-    fetch("https://reqres.in/api/users")
+    fetch("https://reqres.in/api/users?page=2")
     .then(response => response.json())
     .then(data =>{
         // console.log(data);
@@ -40,7 +40,7 @@ function createUser(){
         email:document.querySelector("#email").value,
 
     };
-    fetch("https://reqres.in/api/users",{
+    fetch("https://reqres.in/api/users?page=2",{
         method:"POST",
         headers:{
             'Content-Type':'application/json'
